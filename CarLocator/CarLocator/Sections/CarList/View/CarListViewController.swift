@@ -23,6 +23,7 @@ class CarListViewController: UIViewController {
         super.viewDidLoad()
 
         setUpTableView()
+
     }
 
     // MARK: - Methods

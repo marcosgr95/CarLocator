@@ -9,6 +9,7 @@ import Foundation
 
 final class AppModule: App {
 
+    var API: API = MyTaxiAPI()
     var carProvider: CarProvider = MyTaxiCarProvider(carPresenter: MyTaxiCarPresenter())
 
 }

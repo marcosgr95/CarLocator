@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let carListStoryboard: UIStoryboard = UIStoryboard(name: Storyboards.CarListViewController, bundle: nil)
         let carListVC: CarListViewController = carListStoryboard.instantiateViewController(withIdentifier: Storyboards.CarListViewController) as! CarListViewController
+        carListVC.injectDependencies(injectApp())
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = carListVC
         self.window?.makeKeyAndVisible()

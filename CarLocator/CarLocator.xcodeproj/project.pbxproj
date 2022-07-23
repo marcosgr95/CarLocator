@@ -21,6 +21,11 @@
 		6BA43A5D2889C14500D1A4DD /* CarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA43A5C2889C14500D1A4DD /* CarPresenter.swift */; };
 		6BA43A5F2889C22900D1A4DD /* MyTaxiCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA43A5E2889C22900D1A4DD /* MyTaxiCarPresenter.swift */; };
 		6BA43A612889C2EC00D1A4DD /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA43A602889C2EC00D1A4DD /* CarViewController.swift */; };
+		6BA43A64288AEECB00D1A4DD /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA43A63288AEECB00D1A4DD /* Car.swift */; };
+		6BA43A66288AEF9400D1A4DD /* CarLocatorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA43A65288AEF9400D1A4DD /* CarLocatorResult.swift */; };
+		6BA43A68288BCA4400D1A4DD /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA43A67288BCA4400D1A4DD /* API.swift */; };
+		6BA43A6A288BCA7000D1A4DD /* MyTaxiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA43A69288BCA7000D1A4DD /* MyTaxiAPI.swift */; };
+		6BA43A6C288BCC9000D1A4DD /* URLQueryItem+Hamburg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA43A6B288BCC9000D1A4DD /* URLQueryItem+Hamburg.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,11 @@
 		6BA43A5C2889C14500D1A4DD /* CarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPresenter.swift; sourceTree = "<group>"; };
 		6BA43A5E2889C22900D1A4DD /* MyTaxiCarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaxiCarPresenter.swift; sourceTree = "<group>"; };
 		6BA43A602889C2EC00D1A4DD /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
+		6BA43A63288AEECB00D1A4DD /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		6BA43A65288AEF9400D1A4DD /* CarLocatorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarLocatorResult.swift; sourceTree = "<group>"; };
+		6BA43A67288BCA4400D1A4DD /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		6BA43A69288BCA7000D1A4DD /* MyTaxiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTaxiAPI.swift; sourceTree = "<group>"; };
+		6BA43A6B288BCC9000D1A4DD /* URLQueryItem+Hamburg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLQueryItem+Hamburg.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,7 @@
 		6BA43A2D2889A43200D1A4DD /* CarLocator */ = {
 			isa = PBXGroup;
 			children = (
+				6BA43A62288AEE9100D1A4DD /* Domain */,
 				6BA43A4C2889AEC500D1A4DD /* DI */,
 				6BA43A422889A8E300D1A4DD /* Sections */,
 				6BA43A4B2889ABFA00D1A4DD /* Support */,
@@ -119,7 +130,9 @@
 		6BA43A4B2889ABFA00D1A4DD /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				6BA43A6D288BCC9400D1A4DD /* Extensions */,
 				6BA43A492889ABF200D1A4DD /* Constants.swift */,
+				6BA43A65288AEF9400D1A4DD /* CarLocatorResult.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -141,6 +154,7 @@
 				6BA43A522889AFC700D1A4DD /* CarProvider.swift */,
 				6BA43A5C2889C14500D1A4DD /* CarPresenter.swift */,
 				6BA43A602889C2EC00D1A4DD /* CarViewController.swift */,
+				6BA43A67288BCA4400D1A4DD /* API.swift */,
 			);
 			path = Dependencies;
 			sourceTree = "<group>";
@@ -151,8 +165,25 @@
 				6BA43A552889B1D400D1A4DD /* AppModule.swift */,
 				6BA43A572889B23300D1A4DD /* MyTaxiCarProvider.swift */,
 				6BA43A5E2889C22900D1A4DD /* MyTaxiCarPresenter.swift */,
+				6BA43A69288BCA7000D1A4DD /* MyTaxiAPI.swift */,
 			);
 			path = Implementations;
+			sourceTree = "<group>";
+		};
+		6BA43A62288AEE9100D1A4DD /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				6BA43A63288AEECB00D1A4DD /* Car.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		6BA43A6D288BCC9400D1A4DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6BA43A6B288BCC9000D1A4DD /* URLQueryItem+Hamburg.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,13 +258,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BA43A502889AEDC00D1A4DD /* App.swift in Sources */,
+				6BA43A66288AEF9400D1A4DD /* CarLocatorResult.swift in Sources */,
 				6BA43A5D2889C14500D1A4DD /* CarPresenter.swift in Sources */,
+				6BA43A64288AEECB00D1A4DD /* Car.swift in Sources */,
 				6BA43A562889B1D400D1A4DD /* AppModule.swift in Sources */,
 				6BA43A4E2889AECE00D1A4DD /* Injector.swift in Sources */,
+				6BA43A68288BCA4400D1A4DD /* API.swift in Sources */,
+				6BA43A6A288BCA7000D1A4DD /* MyTaxiAPI.swift in Sources */,
 				6BA43A612889C2EC00D1A4DD /* CarViewController.swift in Sources */,
 				6BA43A532889AFC700D1A4DD /* CarProvider.swift in Sources */,
 				6BA43A4A2889ABF200D1A4DD /* Constants.swift in Sources */,
 				6BA43A332889A43200D1A4DD /* CarListViewController.swift in Sources */,
+				6BA43A6C288BCC9000D1A4DD /* URLQueryItem+Hamburg.swift in Sources */,
 				6BA43A5F2889C22900D1A4DD /* MyTaxiCarPresenter.swift in Sources */,
 				6BA43A2F2889A43200D1A4DD /* AppDelegate.swift in Sources */,
 				6BA43A582889B23300D1A4DD /* MyTaxiCarProvider.swift in Sources */,

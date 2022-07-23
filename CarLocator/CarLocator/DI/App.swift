@@ -10,5 +10,6 @@ import Foundation
 func injectApp() -> App { AppInjector.shared.app }
 
 protocol App {
+    var API: API { get }
     var carProvider: CarProvider { get }
 }
