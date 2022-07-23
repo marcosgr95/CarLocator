@@ -25,6 +25,11 @@ struct Coordinates {
     static let hamburgSouthEast: (Double, Double) = (53.394655, 10.099891)
 }
 
+struct ErrorMessages {
+    static let generic: String = "There was an unexpected error. Try again later."
+    static let serverError: String = "The server seems to be unreachable at the moment or something went wrong. Try again later."
+}
+
 struct QueryParams {
     static let nwLat = "p1Lat"
     static let nwLon = "p1Lon"

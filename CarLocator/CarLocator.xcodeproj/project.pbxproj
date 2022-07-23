@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B65CA92288C3F1100B9E11A /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65CA91288C3F1100B9E11A /* UIViewController+Alerts.swift */; };
 		6BA43A2F2889A43200D1A4DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA43A2E2889A43200D1A4DD /* AppDelegate.swift */; };
 		6BA43A332889A43200D1A4DD /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA43A322889A43200D1A4DD /* CarListViewController.swift */; };
 		6BA43A362889A43200D1A4DD /* CarListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA43A342889A43200D1A4DD /* CarListViewController.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B65CA91288C3F1100B9E11A /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		6BA43A2B2889A43200D1A4DD /* CarLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA43A2E2889A43200D1A4DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BA43A322889A43200D1A4DD /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
@@ -125,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				6BA43A442889A99800D1A4DD /* View */,
-				6BA43A462889A9AA00D1A4DD /* Presenter */,
 			);
 			path = CarList;
 			sourceTree = "<group>";
@@ -140,18 +141,11 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		6BA43A462889A9AA00D1A4DD /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		6BA43A4B2889ABFA00D1A4DD /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				6BA43A492889ABF200D1A4DD /* Constants.swift */,
 				6BA43A65288AEF9400D1A4DD /* CarLocatorResult.swift */,
+				6BA43A492889ABF200D1A4DD /* Constants.swift */,
 				6BA43A6D288BCC9400D1A4DD /* Extensions */,
 			);
 			path = Support;
@@ -207,6 +201,7 @@
 				6BA43A75288BD66B00D1A4DD /* String+Car.swift */,
 				6BA43A6B288BCC9000D1A4DD /* URLQueryItem+Hamburg.swift */,
 				6BA43A82288BE91C00D1A4DD /* UIColor+CarLocator.swift */,
+				6B65CA91288C3F1100B9E11A /* UIViewController+Alerts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -337,6 +332,7 @@
 				6BA43A4A2889ABF200D1A4DD /* Constants.swift in Sources */,
 				6BA43A332889A43200D1A4DD /* CarListViewController.swift in Sources */,
 				6BA43A6C288BCC9000D1A4DD /* URLQueryItem+Hamburg.swift in Sources */,
+				6B65CA92288C3F1100B9E11A /* UIViewController+Alerts.swift in Sources */,
 				6BA43A74288BD4D000D1A4DD /* Bool+Activeness.swift in Sources */,
 				6BA43A5F2889C22900D1A4DD /* MyTaxiCarPresenter.swift in Sources */,
 				6BA43A2F2889A43200D1A4DD /* AppDelegate.swift in Sources */,

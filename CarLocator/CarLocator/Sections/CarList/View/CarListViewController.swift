@@ -44,11 +44,16 @@ class CarListViewController: UIViewController {
             do {
                 try await interactor?.retrieveCars(northWestCoordinates: nil, southEastCoordinates: nil)
             } catch let error as CarProviderError {
-                // TODO show alert with a message
-                print(error)
+                var message: String?
+                switch error {
+                case .badRequest:
+                    message = ErrorMessages.serverError
+                default:
+                    message = ErrorMessages.generic
+                }
+                showAlert(title: "Oops!", message: message ?? "")
             } catch {
-                // TODO show alert telling user something went wrong
-                print(error)
+                showAlert(title: "Oops!", message: error.localizedDescription)
             }
         }
     }
@@ -58,6 +63,16 @@ class CarListViewController: UIViewController {
         carTableView.delegate = self
         carTableView.dataSource = self
         carTableView.separatorStyle = .none
+        createRefreshControl()
+    }
+
+    private func createRefreshControl() {
+        carTableView.refreshControl = UIRefreshControl()
+        carTableView.refreshControl?.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
+    }
+
+    @objc private func handleRefreshControl() {
+        fetchData()
     }
 
 }
@@ -66,6 +81,7 @@ extension CarListViewController: CarViewController {
     func displayCars(_ cars: [CarViewModel]) {
         DispatchQueue.main.async { [weak self] in
             self?.carList = cars
+            self?.carTableView.refreshControl?.endRefreshing()
         }
     }
 }

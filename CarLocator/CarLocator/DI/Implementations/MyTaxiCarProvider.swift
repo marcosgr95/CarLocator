@@ -35,7 +35,6 @@ final class MyTaxiCarProvider: CarProvider {
             else {
                 throw CarProviderError.badUrl
             }
-            print(url)
             let (data, response) = try await URLSession.shared.data(from: url)
             guard
                 let httpResponse = response as? HTTPURLResponse,
