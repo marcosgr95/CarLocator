@@ -15,10 +15,19 @@ final class MyTaxiCarProvider: CarProvider {
         self.carPresenter = carPresenter
     }
 
-    func retrieveCars(latitudes: (Double, Double), longitudes: (Double, Double)) async throws {
+    func retrieveCars(northWestCoordinates: (Double, Double)? = nil, southEastCoordinates: (Double, Double)? = nil) async throws {
         do {
             var urlComps = URLComponents(string: injectApp().API.poiListEndpoint)
-            urlComps?.queryItems = URLQueryItem.hamburgCoordinatesAsURLQueryItems
+            if let northWestCoordinates = northWestCoordinates, let southEastCoordinates = southEastCoordinates {
+                urlComps?.queryItems = [
+                    URLQueryItem(name: QueryParams.nwLat, value: "\(northWestCoordinates.0)"),
+                    URLQueryItem(name: QueryParams.nwLon, value: "\(northWestCoordinates.1)"),
+                    URLQueryItem(name: QueryParams.seLat, value: "\(southEastCoordinates.0)"),
+                    URLQueryItem(name: QueryParams.seLon, value: "\(southEastCoordinates.1)")
+                ]
+            } else {
+                urlComps?.queryItems = URLQueryItem.hamburgCoordinatesAsURLQueryItems
+            }
 
             guard
                 let urlComps = urlComps,
@@ -26,7 +35,7 @@ final class MyTaxiCarProvider: CarProvider {
             else {
                 throw CarProviderError.badUrl
             }
-
+            print(url)
             let (data, response) = try await URLSession.shared.data(from: url)
             guard
                 let httpResponse = response as? HTTPURLResponse,
@@ -35,7 +44,7 @@ final class MyTaxiCarProvider: CarProvider {
                 throw CarProviderError.badRequest
             }
             let carLocatorResult = try JSONDecoder().decode(CarLocatorResult<[Car]>.self, from: data)
-
+            carPresenter.presentCars(carLocatorResult)
         } catch let error as CarProviderError {
             throw error
         } catch {

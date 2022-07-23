@@ -7,8 +7,17 @@
 
 import Foundation
 
-struct Storyboards {
-    static let CarListViewController = "CarListViewController"
+enum CarState: String {
+    case active = "ACTIVE"
+    case inactive = "INACTIVE"
+}
+
+enum CarType: String {
+    case taxi = "TAXI"
+}
+
+struct CustomCells {
+    static let CarListTableViewCell = "CarListTableViewCell"
 }
 
 struct Coordinates {
@@ -21,4 +30,8 @@ struct QueryParams {
     static let nwLon = "p1Lon"
     static let seLat = "p2Lat"
     static let seLon = "p2Lon"
+}
+
+struct Storyboards {
+    static let CarListViewController = "CarListViewController"
 }

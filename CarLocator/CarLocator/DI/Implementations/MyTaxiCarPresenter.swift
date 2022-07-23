@@ -14,4 +14,15 @@ final class MyTaxiCarPresenter: CarPresenter {
     func setView(_ view: CarViewController) {
         carViewController = view
     }
+
+    func presentCars(_ carResult: CarLocatorResult<[Car]>) {
+        carViewController?.displayCars(
+            carResult.resultsList?
+                .compactMap{ CarViewModel(
+                    active: $0.state == CarState.active.rawValue,
+                    location: ($0.coordinate.latitude, $0.coordinate.longitude),
+                    type: $0.type)
+                } ?? []
+        )
+    }
 }
