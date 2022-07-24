@@ -11,6 +11,7 @@
 		6B65CA9E288D46EC00B9E11A /* CarMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65CA9C288D46EC00B9E11A /* CarMapViewController.swift */; };
 		6B65CA9F288D46EC00B9E11A /* CarMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B65CA9D288D46EC00B9E11A /* CarMapViewController.xib */; };
 		6B65CAA1288D49FB00B9E11A /* MKMapView+Bounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65CAA0288D49FB00B9E11A /* MKMapView+Bounds.swift */; };
+		6B65CAA4288DA14400B9E11A /* CarAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B65CAA3288DA14300B9E11A /* CarAnnotation.swift */; };
 		6BA43A2F2889A43200D1A4DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA43A2E2889A43200D1A4DD /* AppDelegate.swift */; };
 		6BA43A332889A43200D1A4DD /* CarListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BA43A322889A43200D1A4DD /* CarListViewController.swift */; };
 		6BA43A362889A43200D1A4DD /* CarListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BA43A342889A43200D1A4DD /* CarListViewController.storyboard */; };
@@ -46,6 +47,7 @@
 		6B65CA9C288D46EC00B9E11A /* CarMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMapViewController.swift; sourceTree = "<group>"; };
 		6B65CA9D288D46EC00B9E11A /* CarMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarMapViewController.xib; sourceTree = "<group>"; };
 		6B65CAA0288D49FB00B9E11A /* MKMapView+Bounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+Bounds.swift"; sourceTree = "<group>"; };
+		6B65CAA3288DA14300B9E11A /* CarAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarAnnotation.swift; sourceTree = "<group>"; };
 		6BA43A2B2889A43200D1A4DD /* CarLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BA43A2E2889A43200D1A4DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BA43A322889A43200D1A4DD /* CarListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewController.swift; sourceTree = "<group>"; };
@@ -100,10 +102,19 @@
 		6B65CA99288D468C00B9E11A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6B65CAA2288DA12C00B9E11A /* MapAnnotation */,
 				6B65CA9C288D46EC00B9E11A /* CarMapViewController.swift */,
 				6B65CA9D288D46EC00B9E11A /* CarMapViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6B65CAA2288DA12C00B9E11A /* MapAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				6B65CAA3288DA14300B9E11A /* CarAnnotation.swift */,
+			);
+			path = MapAnnotation;
 			sourceTree = "<group>";
 		};
 		6BA43A222889A43200D1A4DD = {
@@ -360,6 +371,7 @@
 				6BA43A4A2889ABF200D1A4DD /* Constants.swift in Sources */,
 				6BA43A332889A43200D1A4DD /* CarListViewController.swift in Sources */,
 				6BA43A6C288BCC9000D1A4DD /* URLQueryItem+Hamburg.swift in Sources */,
+				6B65CAA4288DA14400B9E11A /* CarAnnotation.swift in Sources */,
 				6B65CA92288C3F1100B9E11A /* UIViewController+Alerts.swift in Sources */,
 				6BA43A74288BD4D000D1A4DD /* Bool+Activeness.swift in Sources */,
 				6BA43A5F2889C22900D1A4DD /* MyTaxiCarPresenter.swift in Sources */,
