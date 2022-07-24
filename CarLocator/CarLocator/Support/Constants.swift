@@ -21,8 +21,10 @@ struct CustomCells {
 }
 
 struct Coordinates {
+    static let defaultRadius: Double = 1_000
     static let hamburgNorthWest: (Double, Double) = (53.694865, 9.757589)
     static let hamburgSouthEast: (Double, Double) = (53.394655, 10.099891)
+    static let hamburgCenter: (Double, Double) = (53.551086, 9.993682)
 }
 
 struct ErrorMessages {
@@ -39,4 +41,8 @@ struct QueryParams {
 
 struct Storyboards {
     static let CarListViewController = "CarListViewController"
+
+    struct EmbeddedVC {
+        static let CarListNavigationViewController = "CarListNVC"
+    }
 }

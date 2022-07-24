@@ -28,6 +28,7 @@ class CarListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setUpViews()
         setUpTableView()
         fetchData()
     }
@@ -64,6 +65,19 @@ class CarListViewController: UIViewController {
         carTableView.dataSource = self
         carTableView.separatorStyle = .none
         createRefreshControl()
+    }
+
+    private func setUpViews() {
+        title = "Hamburg Cars"
+        navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor : UIColor.bgColor]
+        navigationItem.setRightBarButton(UIBarButtonItem(title: "🗾", style: .plain, target: self, action: #selector(displayMap)), animated: true)
+    }
+
+    @objc private func displayMap() {
+        let mapVC = CarMapViewController()
+        mapVC.injectDependencies(injectApp())
+        mapVC.modalPresentationStyle = .popover
+        present(mapVC, animated: true)
     }
 
     private func createRefreshControl() {
