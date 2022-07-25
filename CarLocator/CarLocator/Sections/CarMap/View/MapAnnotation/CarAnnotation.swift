@@ -10,6 +10,7 @@ import MapKit
 
 class CarAnnotation: NSObject, MKAnnotation {
 
+    static let clusteringIdentifier: String = "CarAnnotationCluster"
     static let identifier: String = "CarAnnotation"
 
     let coordinate: CLLocationCoordinate2D

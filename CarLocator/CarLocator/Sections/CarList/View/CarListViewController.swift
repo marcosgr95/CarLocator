@@ -76,7 +76,7 @@ class CarListViewController: UIViewController {
     @objc private func displayMap() {
         let mapVC = CarMapViewController()
         mapVC.injectDependencies(injectApp())
-        mapVC.modalPresentationStyle = .popover
+        mapVC.modalPresentationStyle = .pageSheet
         present(mapVC, animated: true)
     }
 

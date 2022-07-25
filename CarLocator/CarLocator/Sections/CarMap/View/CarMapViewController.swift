@@ -91,8 +91,14 @@ extension CarMapViewController: MKMapViewDelegate {
         annotationView.image = UIImage(systemName: "car")
         annotationView.canShowCallout = true
         annotationView.calloutOffset = CGPoint(x: -5, y: 5)
+        annotationView.clusteringIdentifier = CarAnnotation.clusteringIdentifier
 
         return annotationView
+    }
+
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let cluster = view.annotation as? MKClusterAnnotation else { return }
+        mapView.showAnnotations(cluster.memberAnnotations, animated: true)
     }
 
 }
