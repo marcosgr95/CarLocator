@@ -12,15 +12,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return .portrait
+    }
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         initDependencies()
         
         let carListStoryboard: UIStoryboard = UIStoryboard(name: Storyboards.CarListViewController, bundle: nil)
-        let carListVC: CarListViewController = carListStoryboard.instantiateViewController(withIdentifier: Storyboards.CarListViewController) as! CarListViewController
+        let carListNVC: UINavigationController = carListStoryboard.instantiateViewController(withIdentifier: Storyboards.EmbeddedVC.CarListNavigationViewController) as! UINavigationController
+        let carListVC: CarListViewController = carListNVC.viewControllers.first as! CarListViewController
         carListVC.injectDependencies(injectApp())
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = carListVC
+        self.window?.rootViewController = carListNVC
         self.window?.makeKeyAndVisible()
 
         return true
